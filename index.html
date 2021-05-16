@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advice | v!n</title>
+	<meta http-equiv="refresh" content="20">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-family: consolas;
+		}
+
+		body{
+			min-height: 100vh;
+			display: flex;
+			background: #75AFC7;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: 70%;
+			margin: 20px auto;
+			overflow: hidden;
+			color: #5120CB;
+			font-weight: 700;
+		}
+
+	</style>
+
+</head>
+<body>
+
+    <h1 id="advice"></h2>
+
+<script>
+
+const url="https://api.adviceslip.com/advice";
+async function fetchAdvice() {
+	const newadvice= await fetch(url);
+	const advice= await newadvice.json();
+	const advi=(advice.slip.advice);
+	document.getElementById('advice').innerHTML=advi;
+}
+fetchAdvice()
+
+</script>
+</body>
+</html>
